@@ -12,6 +12,19 @@ const updateData = async () => {
     }
 }
 updateData()
+var samplet="Sample"
+var sampleTodo="This is sample text"
+if(localStorage.getItem(samplet)==null){
+  localStorage.setItem(samplet,sampleTodo)
+const todoList = document.getElementById("list")
+    todoList.innerHTML += `<div class="card m-1" style="width: 18rem;border: 1px dashed black;">
+    <div class="card-body">
+      <h5 class="card-title">${samplet}</h5>
+      <p class="card-text">${localStorage.getItem(samplet)}</p>
+      <button class="btn btn-danger">Remove</button>
+    </div>
+  </div>`
+}
 const add = document.getElementById("addTodo")
 add.addEventListener("click", (e) => {
     e.preventDefault()
